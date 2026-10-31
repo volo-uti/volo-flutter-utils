@@ -1,0 +1,44 @@
+name: Bug report
+description: Something does not work as documented.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. For security problems, do not use this form: see [SECURITY.md](https://github.com/volo-uti/volo-flutter-utils/blob/main/SECURITY.md).
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      options:
+        - volo_flutter_utils
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      description: The version in your `pubspec.lock`, or the commit if you use the repository directly.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Flutter and platform
+      description: Output of `flutter --version` and the platform where it happens (iOS, Android, macOS, Windows, Linux).
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: A minimal code sample or numbered steps.
+    validations:
+      required: true

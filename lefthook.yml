@@ -1,0 +1,5 @@
+# Tests run locally, not on a remote CI.
+pre-push:
+  commands:
+    check:
+      run: make check

@@ -1,0 +1,14 @@
+[extensions]
+datetime_extensions|VDateTimeExtension: Calendar comparisons and day, month boundaries for DateTime.
+double_extensions|VDoubleExtension: Layout and range helpers for double.
+int_extensions|VIntExtension: Range, padding, duration and Unix-time helpers for int.
+map_extensions|VMapExtension: Search, typed lookup, filtering, merging and key picking for Map.
+string_extensions|VStringExtension: Format checks and small conversions for String.
+timeofday_extensions|VTimeOfDayExtension: Comparison and midnight-wrapping arithmetic for TimeOfDay.
+[helpers]
+v_delay|VDebouncer: Runs callback once calls have stopped for duration.
+v_device|VDevice: Platform checks and a cached summary of the current device.
+v_log|VLog: Prints tagged log lines with the caller's file location.
+v_package|VPackage: Reads the running app's name, version and build number once and caches it.
+[validators]
+v_validator|VValidator: Synchronous input checks that return a VValidationResult.
