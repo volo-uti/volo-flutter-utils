@@ -19,7 +19,7 @@ dependencies:
   volo_flutter_utils:
     git:
       url: https://github.com/volo-uti/volo-flutter-utils.git
-      ref: v0.1.0 # a release tag
+      ref: v0.1.1 # a release tag
 ```
 
 The package is distributed through GitHub, not pub.dev: a release tag (`v<version>`, equal to `version` in `pubspec.yaml`) is the version a product depends on.

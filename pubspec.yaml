@@ -1,7 +1,7 @@
 name: volo_flutter_utils
 description: "Framework-neutral Flutter utilities: validators, extensions, helpers. Mobile/Desktop."
 publish_to: none
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/volo-uti/volo-flutter-utils
 repository: https://github.com/volo-uti/volo-flutter-utils
 issue_tracker: https://github.com/volo-uti/volo-flutter-utils/issues
