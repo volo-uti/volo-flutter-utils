@@ -5,7 +5,7 @@ A Flutter utility library: the `volo_flutter_utils` package (this repository's r
 | Path | Holds |
 |---|---|
 | `lib/` | Utilities. Imports `package:flutter/material.dart` because of `TimeOfDay`; the rest is pure Dart. Barrel `lib/volo_flutter_utils.dart` → `lib/src/<section>/<file>.dart` |
-| `tool/` | Index and doc generators (`agent_index.dart`, `component_docs.dart`) |
+| `tool/` | Index and doc generators (`agent_index.dart`, `component_docs.dart`) and the release tool (`release.dart`) |
 | `bin/` | Command shipped to products (`agent_index.dart`) |
 | `doc/` | Generated index and per-utility docs (shipped with the package) |
 | `example/` | A minimal usage example |
@@ -14,6 +14,9 @@ A Flutter utility library: the `volo_flutter_utils` package (this repository's r
 
 - `make check` — the gate. Checks formatting, index, docs, analysis and tests, and fails when a file under `lib/src` is not exported from the barrel. The `pre-push` hook (lefthook, installed by `make setup`) runs it; there is no test CI, and GitHub Actions only publish.
 - `make index` — rewrites the index block below, `doc/index.txt` and `doc/**/*.md`.
+- `make release-check` — checks that `REV` (default `HEAD`) is a valid release commit: title `chore(release): <version>`, version greater than the previous tag, and a `## <version>` entry in `CHANGELOG.md`. While the major is 0 a release raises the patch, breaking changes included. The release workflow runs it on the tag; `make check` does not.
+- `make release-notes` — prints the release notes (Breaking changes, Features, Fixes) from the commit titles since the previous tag.
+- `make changelog` — adds the next version's entry, with the same lines as the notes, to the top of `CHANGELOG.md`. Never edit `CHANGELOG.md` by hand.
 
 ## Skills
 

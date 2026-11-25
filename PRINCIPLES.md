@@ -40,9 +40,15 @@ Enforced by: review.
 
 ## Only the final state
 
-Documents and code describe how things are now. They carry no "previously" sections and no migration notes; the history is in `git log`. Release notes are written by GitHub from the merged changes when a tag is released.
+Documents and code describe how things are now. They carry no "previously" sections and no migration notes; the history is in `git log`, and `CHANGELOG.md` and the release notes are built from its commit titles.
 
 Enforced by: review.
+
+## A version says what changed
+
+A tag sits on its release commit (`chore(release): <version>`), the version is greater than the previous tag, and `CHANGELOG.md` has the version's entry. While the major version is 0 a release raises the patch, and a breaking change is listed under Breaking changes in the notes and the changelog. Apps take this library by tag, so a release that hides a breaking change breaks them without warning.
+
+Enforced by: `make release-check`, which the release workflow runs again on the tag.
 
 ## Choices
 
