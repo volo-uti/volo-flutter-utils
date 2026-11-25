@@ -101,7 +101,7 @@ Android · iOS · macOS · Windows · Linux
 
 ## Development
 
-Requirements: [FVM](https://fvm.app) (the Flutter version is in `.fvmrc`) and Dart SDK 3.11.0 or newer.
+Requirements: [FVM](https://fvm.app) (the Flutter version is in `.fvmrc`) and Dart SDK 3.14.0 or newer.
 
 ```bash
 dart pub global activate fvm   # install FVM
