@@ -1,4 +1,5 @@
 import 'package:clock/clock.dart';
+// ignore: deprecated_member_use
 import 'package:flutter/material.dart';
 
 /// Comparison and midnight-wrapping arithmetic for [TimeOfDay].
