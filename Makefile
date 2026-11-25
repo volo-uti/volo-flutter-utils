@@ -3,8 +3,12 @@ FVM     := $(shell command -v fvm 2>/dev/null)
 FLUTTER ?= $(if $(FVM),fvm flutter,flutter)
 DART    ?= $(if $(FVM),fvm dart,dart)
 FORMAT_DIRS := lib test bin example tool
+# The commit that `release-check`, `release-notes` and `changelog` read.
+REV ?= HEAD
+# The version `changelog` writes; empty picks it from pubspec.yaml and the tags.
+VERSION ?=
 
-.PHONY: setup test fmt analyze index check
+.PHONY: setup test fmt analyze index check release-check release-notes changelog
 
 setup:
 	$(if $(FVM),fvm install,)
@@ -37,3 +41,17 @@ check:
 	$(DART) run tool/component_docs.dart --check
 	$(MAKE) analyze
 	$(MAKE) test
+
+# Fails when REV (default HEAD) is not a valid release commit: its title,
+# its CHANGELOG.md entry, and the version against the previous tag.
+release-check:
+	$(DART) run tool/release.dart check --commit $(REV)
+
+# Prints the release notes built from the commit titles since the previous tag.
+release-notes:
+	$(DART) run tool/release.dart notes --commit $(REV)
+
+# Adds the next version's entry, built from the commit titles since the
+# previous tag, to the top of CHANGELOG.md. It does not commit.
+changelog:
+	$(DART) run tool/release.dart changelog --commit $(REV) $(if $(VERSION),--version $(VERSION),)
