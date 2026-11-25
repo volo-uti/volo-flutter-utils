@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.2
+
+### Breaking changes
+
+- require Flutter 3.50 and Dart 3.14 (fbe9828)
+
+### Features
+
+- **release:** add a release check, release notes and CHANGELOG.md built from commit titles (bb62056)
+
 ## 0.1.1
 
 ### Features
